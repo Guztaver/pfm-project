@@ -1,0 +1,136 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaf5ea;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.catho.com.br/carreira-sucesso/wp-content/uploads/sites/3/2021/12/criatividade-1.jpg');
+    background-size: cover;
+    background-position: center 20%;
+    background-attachment: fixed;
+    filter: blur(0); 
+    animation: fadeIn 1s ease-in-out; 
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); 
+    z-index: -1; 
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+header {
+    background-color: #1c52a9;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: slideIn 1s ease-out; 
+}
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.search-bar {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    animation: fadeIn 1s ease-out; 
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #42738d;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.search-bar button {
+    background-color: #6483ab;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    animation: fadeIn 1s ease-out; 
+}
+
+.search-bar button:hover {
+    background-color: #55658e;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    animation: fadeIn 1s ease-out; 
+}
+
+.filter-buttons button {
+    background-color: #55658e;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-buttons button:hover {
+    background-color: #55658e;
+}
+
+.job-listings {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    animation: fadeIn 1s ease-out; 
+}
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #ede8e8;
+    color: rgb(46, 37, 168);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .home-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: url('https://www.flowup.me/blog/wp-content/uploads/2023/12/IMAGENS-BLOG-4.webp') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: contrast(1.2);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    padding: 40px 30px;
+    text-align: center;
+    animation: slideIn 0.6s ease-out; 
+}
+
+h2 {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1877f2;
+    color: #fff;
+    cursor: pointer;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+button:hover {
+    background-color: #145db2;
+}
+
+.options {
+    margin-top: 15px;
+}
+
+.login-link {
+    display: block;
+    margin-top: 10px;
+    color: #1877f2;
+    text-decoration: none;
+    animation: fadeIn 1s ease-in-out; 
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #d8dfe3;
+    color: rgb(47, 82, 195);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.invisible-btn {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.invisible-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 2px solid #000;
+}
