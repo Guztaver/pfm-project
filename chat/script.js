@@ -24,10 +24,19 @@ $(document).ready(function () {
 
   function displayInitialMessage() {
     const initialMessage = messages[1].content;
-    const messageElement = $('<div class="message bot-message"></div>').text(
-      initialMessage,
-    );
-    chatMessages.append(messageElement);
+    
+    // Criar o contu00eainer da mensagem com a foto de perfil
+    const containerElement = $('<div class="message-container bot-container"></div>');
+    
+    // Adicionar a foto de perfil
+    const profilePic = $('<div class="profile-pic bot-pic"></div>');
+    containerElement.append(profilePic);
+    
+    // Adicionar a mensagem
+    const messageElement = $('<div class="message bot-message"></div>').text(initialMessage);
+    containerElement.append(messageElement);
+    
+    chatMessages.append(containerElement);
     scrollToBottom();
   }
 
@@ -59,9 +68,14 @@ $(document).ready(function () {
     // Prepare payload for sending
     const requestPayload = JSON.stringify(payload);
 
-    // Add test message placeholder for streaming
+    // Add test message placeholder for streaming with profile pic
+    const testContainerElement = $('<div class="message-container bot-container"></div>');
+    const testProfilePic = $('<div class="profile-pic bot-pic"></div>');
     const testMessageElement = $('<div class="message bot-message"></div>');
-    chatMessages.append(testMessageElement);
+    
+    testContainerElement.append(testProfilePic);
+    testContainerElement.append(testMessageElement);
+    chatMessages.append(testContainerElement);
     scrollToBottom();
 
     let testResponse = "";
@@ -160,11 +174,16 @@ $(document).ready(function () {
       content: userMessage,
     });
 
-    // Show typing indicator
+    // Show typing indicator with profile picture
+    const typingContainerElement = $('<div class="message-container bot-container"></div>');
+    const typingProfilePic = $('<div class="profile-pic bot-pic"></div>');
     const typingIndicator = $('<div class="message bot-message typing">').html(
       '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>',
     );
-    chatMessages.append(typingIndicator);
+    
+    typingContainerElement.append(typingProfilePic);
+    typingContainerElement.append(typingIndicator);
+    chatMessages.append(typingContainerElement);
     scrollToBottom();
 
     // Create request with streaming enabled
@@ -180,9 +199,14 @@ $(document).ready(function () {
     const requestPayload = JSON.stringify(chatRequest);
 
     // Manteremos o indicador de carregamento enquanto estiver processando <think>
-    // Criar elemento de resposta, mas só mostrar quando terminar o pensamento
-    const responseMessageElement = $('<div class="message bot-message" style="display:none;"></div>');
-    chatMessages.append(responseMessageElement);
+    // Criar elemento de resposta com foto de perfil, mas só mostrar quando terminar o pensamento
+    const responseContainerElement = $('<div class="message-container bot-container" style="display:none;"></div>');
+    const responseProfilePic = $('<div class="profile-pic bot-pic"></div>');
+    const responseMessageElement = $('<div class="message bot-message"></div>');
+    
+    responseContainerElement.append(responseProfilePic);
+    responseContainerElement.append(responseMessageElement);
+    chatMessages.append(responseContainerElement);
     scrollToBottom();
 
     let fullResponse = "";
@@ -211,7 +235,7 @@ $(document).ready(function () {
           if (done) {
             // Processamento final quando o stream termina
             // Garantir que o indicador de carregamento seja removido
-            typingIndicator.remove();
+            typingContainerElement.remove();
             
             // Processar a resposta final para remover qualquer tag think restante
             const processedResponse = fullResponse
@@ -220,7 +244,7 @@ $(document).ready(function () {
               .trim();
             
             // Exibir a resposta final processada
-            responseMessageElement.show();
+            responseContainerElement.show();
             responseMessageElement.text(processedResponse);
             
             // Add final response to chat history (versão processada)
@@ -268,9 +292,9 @@ $(document).ready(function () {
                     // Se nu00e3o estiver pensando, mostrar o conteu00fado processado
                     if (!isThinking) {
                       // Remover o indicador de carregamento
-                      typingIndicator.remove();
+                      typingContainerElement.remove();
                       // Exibir a mensagem processada
-                      responseMessageElement.show();
+                      responseContainerElement.show();
                       // Processar a resposta para remover as tags think
                       const processedResponse = fullResponse.replace(/<think>[\s\S]*?<\/think>/g, "");
                       responseMessageElement.text(processedResponse.trim());
@@ -316,10 +340,20 @@ $(document).ready(function () {
       text = text.trim();
     }
 
+    // Criar o contêiner da mensagem com a foto de perfil
+    const containerElement = $('<div class="message-container"></div>').addClass(`${sender}-container`);
+    
+    // Adicionar a foto de perfil
+    const profilePic = $('<div class="profile-pic"></div>').addClass(`${sender}-pic`);
+    containerElement.append(profilePic);
+    
+    // Adicionar a mensagem
     const messageElement = $('<div class="message"></div>')
       .addClass(`${sender}-message`)
       .text(text);
-    chatMessages.append(messageElement);
+    containerElement.append(messageElement);
+    
+    chatMessages.append(containerElement);
     scrollToBottom();
   }
 
