@@ -4,14 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mercado de Trabalho - Seu Novo Emprego</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body> 
   <header>
     <nav>
       <div class="logo">
-        <h1>Seu novo emprego
+        <h1>Seu novo emprego</h1>
       </div>
       <ul class="menu">
         <li><a href="./cadastro/index.html">Cadastro</a></li>
@@ -19,44 +20,97 @@
         <li><a href="./vagas/index.html">Vagas</a></li>
         <li><a href="./dicas/index.html">Dicas</a></li>
         <li><a href="./login/index.html">Login</a></li>
+        <li><a href="./chat/index.html" class="chat-nav-link"><i class="fas fa-comments"></i> Entrevista AI</a></li>
       </ul>
     </nav>
   </header>
-<!-- / ta inspecionando meu codigo pq parceiro / -->
+
   <section class="banner">
     <div class="container">
       <img src="https://pps.whatsapp.net/v/t61.24694-24/484135900_1386766519130594_4338604006124946912_n.jpg?ccb=11-4&oh=01_Q5AaIcXb0gZo61rUeIluOqMjGYGzlZQbcnRfD8ck1aCMNAM7&oe=67EFC5C1&_nc_sid=5e03e0&_nc_cat=107" class="logo-banner" alt="Logo do PFM">
       <div class="banner-text">
         <h2>Bem-vindo ao PFM</h2>
         <p>Encontre oportunidades, melhore seu currículo e alcance o sucesso profissional.</p>
-        <a href="http://127.0.0.1:5500/cadastro/index.html">
-          <button>Cadastre-se agora</button>
-        </a>
+        <div class="banner-buttons">
+          <a href="./cadastro/index.html" class="btn btn-primary">Cadastre-se agora</a>
+          <a href="./chat/index.html" class="btn btn-secondary">Simular Entrevista</a>
+        </div>
       </div>
     </div>
   </section>
 
-
   <section class="benefits">
-    <div class="container">
+    <div class="section-header">
       <h3>Como podemos te ajudar</h3>
+      <p class="section-subtitle">Ferramentas e recursos para impulsionar sua carreira</p>
+    </div>
+    <div class="container">
       <div class="benefit">
+        <i class="fas fa-briefcase benefit-icon"></i>
         <h4>Vagas Atualizadas</h4>
         <p>Receba alertas com as vagas mais recentes na sua área.</p>
       </div>
       <div class="benefit">
+        <i class="fas fa-file-alt benefit-icon"></i>
         <h4>Melhore seu Currículo</h4>
         <p>Receba dicas de especialistas para melhorar seu currículo e destacar-se no mercado.</p>
       </div>
       <div class="benefit">
+        <i class="fas fa-comments benefit-icon"></i>
         <h4>Consultoria de Carreira</h4>
         <p>Guiamos você nas melhores escolhas para sua trajetória profissional.</p>
+      </div>
+      <div class="benefit">
+        <i class="fas fa-robot benefit-icon"></i>
+        <h4>Entrevista IA</h4>
+        <p>Pratique suas habilidades de entrevista com nosso assistente virtual.</p>
       </div>
     </div>
   </section>
 
+  <!-- Chat flutuante -->
+  <div class="floating-chat" id="floating-chat">
+    <a href="./chat/index.html">
+      <i class="fas fa-comment-dots"></i>
+    </a>
+    <span class="chat-tooltip">Simular Entrevista</span>
+  </div>
+
   <footer>
-    <p>&copy; 2025 PFM - Todos os direitos reservados.</p>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="./cadastro/index.html">Cadastro</a></li>
+          <li><a href="./login/index.html">Login</a></li>
+          <li><a href="./vagas/index.html">Vagas</a></li>
+          <li><a href="./dicas/index.html">Dicas</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="./chat/index.html">Entrevista AI</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Siga-nos</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 PFM - Todos os direitos reservados.</p>
+    </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

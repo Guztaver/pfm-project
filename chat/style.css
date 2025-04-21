@@ -1,0 +1,190 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('https://www.flowup.me/blog/wp-content/uploads/2023/12/IMAGENS-BLOG-4.webp') center/cover no-repeat;
+    background-attachment: fixed;
+    filter: contrast(1.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.chat-container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.6s ease-out;
+}
+
+.chat-header {
+    background-color: #1877f2;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+}
+
+.chat-header h1 {
+    margin: 0 0 5px 0;
+    font-size: 1.8rem;
+}
+
+.chat-header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    animation: fadeIn 0.3s ease-in-out;
+    word-wrap: break-word;
+}
+
+.user-message {
+    align-self: flex-end;
+    background-color: #1877f2;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background-color: #f0f2f5;
+    color: #333;
+    border-bottom-left-radius: 5px;
+}
+
+.bot-message.typing {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #777;
+    border-radius: 50%;
+    display: inline-block;
+    animation: typingAnimation 1.5s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingAnimation {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-6px);
+    }
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+}
+
+#user-input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    resize: none;
+    height: 20px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#send-btn {
+    background-color: #1877f2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #145db2;
+}
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #d8dfe3;
+    color: rgb(47, 82, 195);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.home-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 95%;
+        height: 90vh;
+    }
+}
